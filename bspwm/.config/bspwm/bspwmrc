@@ -1,5 +1,21 @@
 #! /bin/sh
 
+# make matlab work properly
+# REF: https://wiki.archlinux.org/title/MATLAB
+# java application common issue mentioned in ref
+export _JAVA_AWT_WM_NONREPARENTING=1
+# 通过测试发现：上面这一行命令必须放到所有异步命令的前面，环境变量才能
+# 被正常设置所谓的异步是指：以 & 结尾的命令，例如，下文就有三个异步命
+# 令，分别是:
+# sxhkd &
+# exec ~/.nutstore/dist/bin/nutstore-pydaemon.py &
+# exec /home/yongfeizhai/.config/i3/tap-to-click.sh &
+
+# 另外一个解决方案，在 ~/.profile 的文件尾追加下面这几行命令即可
+# if [ $XDG_SESSION_DESKTOP = "bspwm" ]; then
+#     export _JAVA_AWT_WM_NONREPARENTING=1
+# fi
+
 sxhkd &
 $HOME/.fehbg
 
