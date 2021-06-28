@@ -1,0 +1,47 @@
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'"
+export EDITOR=vim
+
+if [ "$ZSH" = '' ]; then
+   	PS1='\[\033[01;34m\]\w\[\033[00m\] \$ '
+fi
+
+#
+# alias
+#
+alias sd='sdcv -u "朗道英汉字典5.0"'
+alias r='ranger'
+alias cl='clear'
+alias n='nvim'
+alias v='vim'
+alias ra='ranger'
+#alias emacs='emacsclient -a "" -t'
+alias bar='trayer --transparent true --tint 0x00ff00 --align right --edge top'
+alias x='xdg-open'
+alias f='fortune'
+alias e='emacs'
+alias proxy='export ALL_PROXY=socks5://127.0.0.1:1089'
+alias qemacs='emacs -Q'
+alias spacemacs='HOME=~/Sandbox/Emacs/spacemacs emacs'
+alias cemacs='HOME=~/Sandbox/Emacs/centauremacs emacs'
+alias memacs='HOME=~/Sandbox/Emacs/memacs emacs'
+alias remacs='HOME=~/Sandbox/Emacs/remacs emacs'
+alias pemacs='HOME=~/Sandbox/Emacs/pemacs emacs'
+
+# Git
+alias gits='git status'
+alias gitd='git diff'
+alias gitl='git log --oneline -7'
+alias gri='git rebase -i'
+alias gca='git commit --amend'
+
+#
+# autojump
+#
+. /usr/share/doc/fzf/examples/key-bindings.bash
+. /usr/share/autojump/autojump.bash
+
+
+#
+# 自定义增强函数
+#
+
