@@ -2,30 +2,33 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O 
 export EDITOR=vim
 
 if [ "$ZSH" = '' ]; then
-   	PS1='\[\033[01;34m\]\w\[\033[00m\] \$ '
+	PS1='\[\033[01;34m\]\w\[\033[00m\] \$ '
 fi
 
 #
-# alias
+# Alias
 #
 alias sd='sdcv -u "朗道英汉字典5.0"'
 alias r='ranger'
-alias cl='clear'
+alias ra='ranger'
 alias n='nvim'
 alias v='vim'
-alias ra='ranger'
-#alias emacs='emacsclient -a "" -t'
 alias bar='trayer --transparent true --tint 0x00ff00 --align right --edge top'
 alias x='xdg-open'
 alias f='fortune'
-alias e='emacs'
 alias proxy='export ALL_PROXY=socks5://127.0.0.1:1089'
+
+# Emacs related
+alias e='emacs'
 alias qemacs='emacs -Q'
 alias spacemacs='HOME=~/Sandbox/Emacs/spacemacs emacs'
 alias cemacs='HOME=~/Sandbox/Emacs/centauremacs emacs'
 alias memacs='HOME=~/Sandbox/Emacs/memacs emacs'
 alias remacs='HOME=~/Sandbox/Emacs/remacs emacs'
 alias pemacs='HOME=~/Sandbox/Emacs/pemacs emacs'
+
+# Vim related
+alias qvim='vim -u NONE'
 
 # Git
 alias gits='git status'
@@ -39,9 +42,3 @@ alias gca='git commit --amend'
 #
 . /usr/share/doc/fzf/examples/key-bindings.bash
 . /usr/share/autojump/autojump.bash
-
-
-#
-# 自定义增强函数
-#
-
