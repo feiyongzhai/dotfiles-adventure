@@ -17,6 +17,7 @@ alias bar='trayer --transparent true --tint 0x00ff00 --align right --edge top'
 alias x='xdg-open'
 alias f='fortune'
 alias proxy='export ALL_PROXY=socks5://127.0.0.1:1089'
+alias terminal='gnome-terminal'
 
 # Emacs related
 alias e='emacs'
@@ -26,6 +27,7 @@ alias cemacs='HOME=~/Sandbox/Emacs/centauremacs emacs'
 alias memacs='HOME=~/Sandbox/Emacs/memacs emacs'
 alias remacs='HOME=~/Sandbox/Emacs/remacs emacs'
 alias pemacs='HOME=~/Sandbox/Emacs/pemacs emacs'
+alias demacs='HOME=~/Sandbox/Emacs/demacs emacs'
 
 # Vim related
 alias qvim='vim -u NONE'
