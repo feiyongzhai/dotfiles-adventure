@@ -1,10 +1,10 @@
-
+#
 # wm independent hotkeys
 #
 
 # i3lock
 super + ctrl + q
-	i3lock -i /home/yongfeizhai/Picture/x.png
+	i3lock -i /home/yongfeizhai/Picture/wallpaper/wallpaper-x.png
 
 # terminal emulator
 super + Return
@@ -148,3 +148,13 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+#
+# my addition
+#
+F1
+	bash -c 'wmctrl -x -a emacs || /usr/local/bin/emacsclient -a "" -c -e "(switch-to-buffer nil)"'
+
+F2
+	bash -c "wmctrl -x -a google-chrome || google-chrome"
+
