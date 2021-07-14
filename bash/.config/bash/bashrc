@@ -22,7 +22,8 @@ alias proxy='export ALL_PROXY=socks5://127.0.0.1:1089'
 alias terminal='gnome-terminal'
 
 # Emacs related
-alias e='emacs'
+alias e='emacs -nw'
+alias emacs='emacs -nw'
 alias qemacs='emacs -Q'
 alias spacemacs='HOME=~/Sandbox/Emacs/spacemacs emacs'
 alias cemacs='HOME=~/Sandbox/Emacs/centauremacs emacs'
