@@ -22,9 +22,13 @@ alias proxy='export ALL_PROXY=socks5://127.0.0.1:1089'
 alias terminal='gnome-terminal'
 
 # Emacs related
+alias e='emacs -nw'
+alias ec='emacsclient -a "" -c'
+if [[ "$TERM" == "eterm-color" ]]; then
+    alias e='emacsclient'
+fi
 alias emacs='emacs -nw'
-alias qemacs="emacs -Q --eval \"(load-theme 'manoj-dark)\""
-alias e="emacs -Q --eval \"(load-theme 'manoj-dark)\""
+alias qemacs='emacs -Q'
 alias spacemacs='HOME=~/Sandbox/Emacs/spacemacs emacs'
 alias cemacs='HOME=~/Sandbox/Emacs/centauremacs emacs'
 alias memacs='HOME=~/Sandbox/Emacs/memacs emacs'
@@ -47,3 +51,21 @@ alias gca='git commit --amend'
 #
 . /usr/share/doc/fzf/examples/key-bindings.bash
 . /usr/share/autojump/autojump.bash
+
+#
+# enhancement
+#
+alias cd=fei-cd
+function fei-cd ()
+{
+	# @ref:https://github.com/baohaojun/system-config/blob/e936ae4cae5764abfe4a3657ae7470532963e8ef/.bashrc-interactive#L23
+	test $#==1 -o $#==0 && builtin cd "$@" >/dev/null 2>&1 || \
+		fzf-cd "$@"
+}
+
+function fzf-cd ()
+{
+	local TARGET=$(fd -H -t d | fzf -1 --reverse --preview='' --query "$*") 
+	# @ref: https://segmentfault.com/a/1190000022265453
+	test -n "$TARGET" && builtin cd $TARGET
+}
