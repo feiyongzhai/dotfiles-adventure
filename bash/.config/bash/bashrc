@@ -20,6 +20,9 @@ alias x='xdg-open'
 alias f='fortune'
 alias proxy='export ALL_PROXY=socks5://127.0.0.1:1089'
 alias terminal='gnome-terminal'
+alias update='sudo apt upgrade && cd ~/.emacs.d && git pull'
+# @ref https://superuser.com/questions/515565/how-to-create-alias-for-minus-sign
+alias -- -='cd -'
 
 # Emacs related
 alias e='emacs -nw'
