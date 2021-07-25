@@ -7,7 +7,8 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O 
 
 # prompt style
 if [ "$ZSH" = '' ]; then
-    PS1='\[\033[01;34m\]\w\[\033[00m\] \$ '
+    PS1='\[\033[01;34m\]\w\[\033[00m\]\n\$ '
+    # PS1='\[\033[01;34m\]$PWD\[\033[00m\]\n\$ '
 fi
 
 export EDITOR=vim
