@@ -33,12 +33,13 @@ alias update='sudo apt upgrade && cd ~/.emacs.d && git pull'
 alias -- -='cd -'
 
 # Emacs related
-alias e='emacs -nw'
+alias e='emacsclient -a "" -t'
 alias ec='emacsclient -a "" -c'
 if [[ "$TERM" == "eterm-color" ]]; then
     alias e='emacsclient'
 fi
-alias emacs='emacs -nw'
+# alias emacs="emacs -nw --eval \"(load-theme 'manoj-dark)\""
+alias emacs='emacsclient -a "" -t'
 alias qemacs='emacs -Q'
 alias spacemacs='HOME=~/Sandbox/Emacs/spacemacs command emacs'
 alias cemacs='HOME=~/Sandbox/Emacs/centauremacs command emacs'
