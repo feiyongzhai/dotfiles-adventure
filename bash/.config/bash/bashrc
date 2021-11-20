@@ -36,7 +36,7 @@ alias -- -='cd -'
 alias e='emacsclient -a "" -t'
 alias ec='emacsclient -a "" -c'
 if [[ "$TERM" == "eterm-color" ]]; then
-    alias e='emacsclient'
+    alias e='emacsclient -n'
 fi
 # alias emacs="emacs -nw --eval \"(load-theme 'manoj-dark)\""
 alias emacs='emacsclient -a "" -t'
@@ -71,7 +71,7 @@ function fei-cd ()
 
 function fzf-cd ()
 {
-    local TARGET=$(fd -H -t d | fzf -1 --reverse --preview='' --query "$*") 
+    local TARGET=$(fd -HI -t d | fzf -1 --reverse --preview='' --query "$*") 
     # @ref: https://segmentfault.com/a/1190000022265453
     test -n "$TARGET" && builtin cd $TARGET
 }
