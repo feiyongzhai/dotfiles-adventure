@@ -37,6 +37,8 @@ alias e='emacsclient -a "" -t'
 alias ec='emacsclient -a "" -c'
 if [[ "$TERM" == "eterm-color" ]]; then
     alias e='emacsclient -n'
+    # 回到之前调用 ansi-term 的 emacs buffer 中
+    alias b='emacsclient -n -e "(switch-to-buffer nil)"'
 fi
 # alias emacs="emacs -nw --eval \"(load-theme 'manoj-dark)\""
 alias emacs='emacsclient -a "" -t'
