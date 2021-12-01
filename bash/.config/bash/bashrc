@@ -77,3 +77,16 @@ function fzf-cd ()
     # @ref: https://segmentfault.com/a/1190000022265453
     test -n "$TARGET" && builtin cd $TARGET
 }
+
+function s ()
+{
+    # 1. 需要注意的地方：shell 编程中字符串中传递参数
+    # @REF: https://blog.csdn.net/u010339879/article/details/100066362
+    # 2. shell 中特殊符号变量的含义
+    # @REF: http://c.biancheng.net/cpp/view/2739.html
+    #
+    # 这个感受现在处于勉强可以使用的状态，有一些情况无法处理，不过我已
+    # 经很开心了
+    emacsclient -e "(eshell/s \"$*\")"
+}
+
