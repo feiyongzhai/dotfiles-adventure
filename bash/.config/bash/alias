@@ -1,0 +1,53 @@
+# -*- mode: sh -*-
+
+# bd is needed, install bd with this command `sudo apt install bd`
+alias u=". bd -si >/dev/null"
+alias sd='sdcv -u "朗道英汉字典5.0"'
+alias r='ranger'
+alias ra='ranger'
+alias n='nvim'
+alias v='vim'
+alias bar='trayer --transparent true --tint 0x00ff00 --align right --edge top'
+alias of='xdg-open'
+alias f='fortune'
+alias proxy='export ALL_PROXY=socks5://127.0.0.1:1089'
+alias terminal='gnome-terminal'
+alias update='sudo apt upgrade && cd ~/.emacs.d && git pull'
+# @ref https://superuser.com/questions/515565/how-to-create-alias-for-minus-sign
+alias -- -='cd -'
+
+# Emacs related
+alias e='emacsclient -a "" -t'
+alias ec='emacsclient -a "" -c'
+if [[ "$TERM" == "eterm-color" ]]; then
+    export FZF_DEFAULT_OPTS="--height 40% --layout=reverse "
+    alias e='emacsclient -n'
+    # 回到之前调用 ansi-term 的 emacs buffer 中
+    alias b='emacsclient -n -e "(switch-to-buffer nil)"> /dev/null'
+    alias bs='emacsclient -n -e "(fei-eshell-cd-here)"'
+    alias tig='emacsclient -n -e "(magit-status)"'
+    alias a='emacsclient -n -e "(eshell/a)"'
+    alias k='emacsclient -n -e "(eshell/k)"'
+    alias ks='emacsclient -n -e "(eshell/ks)"'
+    alias kd='emacsclient -n -e "(eshell/kd)"'
+fi
+# alias emacs="emacs -nw --eval \"(load-theme 'manoj-dark)\""
+alias emacs='emacsclient -a "" -t'
+alias qemacs='emacs -Q'
+alias spacemacs='HOME=~/Sandbox/Emacs/spacemacs command emacs'
+alias cemacs='HOME=~/Sandbox/Emacs/centauremacs command emacs'
+alias memacs='HOME=~/Sandbox/Emacs/memacs command emacs'
+alias remacs='HOME=~/Sandbox/Emacs/remacs command emacs'
+alias pemacs='HOME=~/Sandbox/Emacs/pemacs command emacs'
+alias demacs='HOME=~/Sandbox/Emacs/demacs command emacs'
+
+# Vim related
+alias qvim='vim -u NONE'
+
+# Git
+alias gits='git status'
+alias gitd='git diff'
+alias gitl='git log --oneline -7'
+alias gri='git rebase -i'
+alias gca='git commit --amend'
+
