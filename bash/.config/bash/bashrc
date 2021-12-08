@@ -47,7 +47,7 @@ if [[ "$TERM" == "eterm-color" ]]; then
     alias a='emacsclient -n -e "(eshell/a)"'
     alias k='emacsclient -n -e "(eshell/k)"'
     alias ks='emacsclient -n -e "(eshell/ks)"'
-    alias k='emacsclient -n -e "(eshell/kd)"'
+    alias kd='emacsclient -n -e "(eshell/kd)"'
 fi
 # alias emacs="emacs -nw --eval \"(load-theme 'manoj-dark)\""
 alias emacs='emacsclient -a "" -t'
