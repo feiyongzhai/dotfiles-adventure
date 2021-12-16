@@ -1,5 +1,7 @@
 # -*- mode: sh -*-
 
+alias p='python3'
+
 # bd is needed, install bd with this command `sudo apt install bd`
 alias u=". bd -si >/dev/null"
 alias sd='sdcv -u "朗道英汉字典5.0"'
