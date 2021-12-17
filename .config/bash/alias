@@ -36,12 +36,12 @@ fi
 # alias emacs="emacs -nw --eval \"(load-theme 'manoj-dark)\""
 alias emacs='emacsclient -a "" -t'
 alias qemacs='emacs -Q'
-alias spacemacs='HOME=~/Sandbox/Emacs/spacemacs command emacs'
-alias cemacs='HOME=~/Sandbox/Emacs/centauremacs command emacs'
-alias memacs='HOME=~/Sandbox/Emacs/memacs command emacs'
-alias remacs='HOME=~/Sandbox/Emacs/remacs command emacs'
-alias pemacs='HOME=~/Sandbox/Emacs/pemacs command emacs'
-alias demacs='HOME=~/Sandbox/Emacs/demacs command emacs'
+alias spacemacs='HOME=~/Repos/emacs-configs/spacemacs command emacs'
+alias cemacs='HOME=~/Repos/emacs-configs/centauremacs command emacs'
+alias memacs='HOME=~/Repos/emacs-configs/memacs command emacs'
+alias remacs='HOME=~/Repos/emacs-configs/remacs command emacs'
+alias pemacs='HOME=~/Repos/emacs-configs/pemacs command emacs'
+alias demacs='HOME=~/Repos/emacs-configs/demacs command emacs'
 
 # Vim related
 alias qvim='vim -u NONE'
