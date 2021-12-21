@@ -1,0 +1,9 @@
+这个里面主要用来备份一些小的零碎的配置文件
+
+* Neovim config backup
+
+#+begin_src vimrc :tangle ~/.config/nvim/init.vim :mkdirp yes
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath = &runtimepath
+source ~/.vim/vimrc
+#+end_src
