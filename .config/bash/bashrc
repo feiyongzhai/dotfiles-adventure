@@ -17,6 +17,10 @@ fi
 
 export EDITOR=vim
 
+if [[ "$TERM" == "eterm-color" ]]; then
+    export EDITOR=emacsclient
+fi
+
 # Alias
 source ~/.config/bash/alias
 
