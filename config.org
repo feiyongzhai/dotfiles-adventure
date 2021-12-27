@@ -7,3 +7,26 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vim/vimrc
 #+end_src
+
+* Fish config backup
+
+#+begin_src fish :tangle ~/.config/fish/config.fish :mkdirp yes
+. /usr/share/autojump/autojump.fish
+
+alias u="bd"
+alias of='xdg-open'
+alias e='emacsclient -a "" -t'
+alias ec='emacsclient -a "" -c'
+if [ "$TERM" = "eterm-color" ]
+    export FZF_DEFAULT_OPTS="--height 40% --layout=reverse "
+    alias e='emacsclient -n'
+    # 回到之前调用 ansi-term 的 emacs buffer 中
+    alias b='emacsclient -n -e "(switch-to-buffer nil)"> /dev/null'
+    alias bs='emacsclient -n -e "(fei-eshell-cd-here)"'
+    alias tig='emacsclient -n -e "(magit-status)"'
+    alias a='emacsclient -n -e "(eshell/a)"'
+    alias k='emacsclient -n -e "(eshell/k)"'
+    alias ks='emacsclient -n -e "(eshell/ks)"'
+    alias kd='emacsclient -n -e "(eshell/kd)"'
+end
+#+end_src
