@@ -26,7 +26,7 @@ if [[ "$TERM" == "eterm-color" ]]; then
     alias e='emacsclient -n'
     # 回到之前调用 ansi-term 的 emacs buffer 中
     alias back='emacsclient -n -e "(switch-to-buffer nil)"> /dev/null'
-    alias bs='emacsclient -n -e "(fei-eshell-cd-here)"'
+    alias eshj='emacsclient -n -e "(fei-eshell-cd-here)"'
     alias tig='emacsclient -n -e "(magit-status)"'
     alias a='emacsclient -n -e "(eshell/a)"'
     alias k='emacsclient -n -e "(eshell/k)"'
