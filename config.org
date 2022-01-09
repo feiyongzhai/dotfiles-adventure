@@ -30,3 +30,22 @@ if [ "$TERM" = "eterm-color" ]
     alias kd='emacsclient -n -e "(eshell/kd)"'
 end
 #+end_src
+
+* Vscode config backup
+
+#+begin_src javascript :tangle ~/.config/Code/User/keybindings.json :mkdirp yes
+
+// Place your key bindings in this file to override the defaults
+  [
+      {
+          "key": "ctrl+n",
+          "command": "workbench.action.quickOpenNavigateNext",
+          "when": "inQuickOpen"
+      },
+      {
+          "key": "ctrl+p",
+          "command": "workbench.action.quickOpenNavigatePrevious",
+          "when": "inQuickOpen"
+      }
+  ]
+#+end_src
