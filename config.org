@@ -1,5 +1,11 @@
 此文件用来备份零碎的配置文件
 
+* 一个比较好用的 Tmux 命令
+如果没有 session 就新建一个，有则切换过去，但是我发现日常基本不用 tmux
+#+begin_src shell
+  bash -c "wmctrl -x -a gnome-terminal || gnome-terminal -- tmux new -As0"
+#+end_src
+
 * Neovim config backup
 
 #+begin_src vimrc :tangle ~/.config/nvim/init.vim :mkdirp yes
