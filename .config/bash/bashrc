@@ -41,7 +41,7 @@ function fzf-cd ()
     test -n "$TARGET" && builtin cd $TARGET
 }
 
-function s ()
+function es ()
 {
     # 1. 需要注意的地方：shell 编程中字符串中传递参数
     # @REF: https://blog.csdn.net/u010339879/article/details/100066362
