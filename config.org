@@ -55,3 +55,8 @@ end
       }
   ]
 #+end_src
+
+* Rofi
+#+begin_src shell
+  rofi -show combi -modi combi,drun -theme Arc-Dark -font "Hack 12"
+#+end_src
