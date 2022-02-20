@@ -21,7 +21,8 @@ alias -- -='cd -'
 # Emacs related
 alias e='emacsclient -a "" -t'
 alias ec='emacsclient -a "" -c'
-if [[ "$TERM" == "eterm-color" ]]; then
+if [[ "$TERM" == "eterm-color" ]] || [[ "$TERM" == "dumb" ]]; then
+    # eterm-color is for emacs-term, dumb is for emacs-shell
     export FZF_DEFAULT_OPTS="--height 40% --layout=reverse "
     alias e='emacsclient -n'
     # 回到之前调用 ansi-term 的 emacs buffer 中
