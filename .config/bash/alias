@@ -40,7 +40,7 @@ if [[ "$TERM" == "eterm-color" ]] || [[ "$TERM" == "dumb" ]]; then
     alias kd='emacsclient -n -e "(eshell/kd)"'
 fi
 # alias emacs="emacs -nw --eval \"(load-theme 'manoj-dark)\""
-alias emacs='emacsclient -a "" -t'
+# alias emacs='emacsclient -a "" -t'
 alias qemacs='emacs -Q'
 alias spacemacs='HOME=~/Repos/emacs-configs/spacemacs command emacs'
 alias cemacs='HOME=~/Repos/emacs-configs/centauremacs command emacs'
