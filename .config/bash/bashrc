@@ -26,7 +26,7 @@ source ~/.config/bash/alias
 
 
 # Enhancement
-alias cd=fei-cd
+# alias cd=fei-cd
 function fei-cd ()
 {
     # @ref:https://github.com/baohaojun/system-config/blob/e936ae4cae5764abfe4a3657ae7470532963e8ef/.bashrc-interactive#L23
