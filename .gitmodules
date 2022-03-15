@@ -1,6 +1,6 @@
-[submodule "vim/.vim"]
-	path = vim/.vim
-	url = https://github.com/feiyongzhai/.vim.git
-[submodule "emacs/.emacs.d"]
-	path = emacs/.emacs.d
+[submodule "emacs.d"]
+	path = emacs.d
 	url = https://github.com/feiyongzhai/.emacs.d.git
+[submodule "vim"]
+	path = vim
+	url = https://github.com/feiyongzhai/.vim.git
