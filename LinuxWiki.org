@@ -1,0 +1,9 @@
+#+TITLE: linux wiki
+
+* systemd
+
+比较常用的命令
+#+BEGIN_SRC sh
+  systemctl enable xxx.service
+#+END_SRC
+xxx.service 一般位于 =/etc/systemd/system= 文件中
