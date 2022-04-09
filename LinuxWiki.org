@@ -7,3 +7,8 @@
   systemctl enable xxx.service
 #+END_SRC
 xxx.service 一般位于 =/etc/systemd/system= 文件中
+
+* =/usr/share/applications/=
+
+* wget 使用代理 =wget -e use_proxy=yes -e https://127.0.0.1:1089=
+参考链接：https://stackoverflow.com/questions/11211705/how-to-set-proxy-for-wget

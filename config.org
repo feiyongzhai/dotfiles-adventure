@@ -68,3 +68,10 @@ end
   set completion-ignore-case on
 #+END_SRC
 
+* xfce 关闭响铃
+#+BEGIN_SRC sh :tangle /etc/profile
+  # 关闭响铃
+  xset b off
+#+END_SRC
+
+
