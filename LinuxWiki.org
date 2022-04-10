@@ -12,3 +12,56 @@ xxx.service 一般位于 =/etc/systemd/system= 文件中
 
 * wget 使用代理 =wget -e use_proxy=yes -e https://127.0.0.1:1089=
 参考链接：https://stackoverflow.com/questions/11211705/how-to-set-proxy-for-wget
+
+* xfce 设置代理
+简单测试了，发现这个方法不会影响 gnome 中的代理配置。这样我就可以很愉快同时使用 xfce 和 gnome 两个桌面环境了
+
+[[https://blog.desdelinux.net/zh-CN/%E5%9C%A8openboxfluxbox-lxde-xfce%E5%92%8C%E7%B1%BB%E4%BC%BC%E7%89%88%E6%9C%AC%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/][参考链接]]
+#+BEGIN_SRC sh :tangle /etc/profile.d/proxy.sh
+  export http_proxy=http://127.0.0.1:1089/
+  export HTTP_PROXY=http://127.0.0.1:1089/
+  export HTTPS_PROXY=http://127.0.0.1:1089/
+  export HTTPS_PROXY=http://127.0.0.1:1089/
+  export ftp_proxy=http://127.0.0.1:1089/
+  export FTP_PROXY=http://127.0.0.1:1089/
+  export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
+  export NO_PROXY="localhost,127.0.0.1,localaddress,.localdomain.com"
+  export all_proxy=socks://127.0.0.1:1089/
+  export ALL_PROXY=socks://127.0.0.1:1089/
+#+END_SRC
+同时添加可执行权限
+#+BEGIN_SRC sh
+  sudo chmod +x /etc/profile.d/proxy.sh
+#+END_SRC
+
+* clash 设置开机启动
+[[https://www.cnblogs.com/skylee03/p/12222767.html][利用 systemd 实现 Clash 开机自启 - skylee]]
+
+首先准备 Clash 的服务脚本，并保存为/etc/systemd/system/clash.service。内容如下：
+#+begin_src sh
+  [Unit]
+  Description=Clash service
+  After=network.target
+
+  [Service]
+  Type=simple
+  User=skylee
+  ExecStart=/usr/bin/clash
+  Restart=on-failure
+  RestartPreventExitStatus=23
+
+  [Install]
+  WantedBy=multi-user.target
+#+end_src
+
+其中User=后面接的内容是你自己的用户名。
+
+设置 Clash 的开机启动项，检查状态，服务启动成功之后，根据信息设置自己客户端的代理协
+议类型及端口：
+
+#+begin_src sh
+  sudo systemctl daemon-reload
+  sudo systemctl enable clash
+  sudo systemctl start clash
+  sudo systemctl status clash
+#+end_src
