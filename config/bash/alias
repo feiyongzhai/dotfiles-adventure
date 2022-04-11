@@ -25,7 +25,8 @@ alias -- -='cd -'
 # Emacs related
 alias e='emacsclient -a "" -t'
 alias ec='emacsclient -a "" -c'
-if [[ "$TERM" == "eterm-color" ]] || [[ "$TERM" == "dumb" ]]; then
+if [[ "$TERM" == "eterm-color" ]] || [[ "$TERM" == "dumb" ]] \
+       || [[ "$INSIDE_EMACS" == "vterm" ]]; then
     # eterm-color is for emacs-term, dumb is for emacs-shell
     export FZF_DEFAULT_OPTS="--height 40% --layout=reverse "
     alias e='emacsclient -n'
