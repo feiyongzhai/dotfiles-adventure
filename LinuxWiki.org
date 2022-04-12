@@ -65,3 +65,18 @@ xxx.service 一般位于 =/etc/systemd/system= 文件中
   sudo systemctl start clash
   sudo systemctl status clash
 #+end_src
+
+* linux 修改按键映射(udev) scancode -> keycode 层面的修改
+#+begin_quote
+貌似只能改单键映射
+#+end_quote
+- [[https://wiki.archlinux.org/title/Map_scancodes_to_keycodes][Map scancodes to keycodes - ArchWiki]]
+- [[https://www.bilibili.com/read/cv5156572][Linux通用键位修改（中）-实际操作 - 哔哩哔哩]]
+在 ~/etc/udev/hwdb.d/99-my-modifiers.hwdb~ 文件添加下列代码
+#+begin_src
+evdev:input:b0005v1A81p1319*	# ikbc S200
+ KEYBOARD_KEY_70039=leftctrl	# bind capslock to ctrl
+
+evdev:atkbd:dmi:*		# laptop keyboard
+ KEYBOARD_KEY_3a=leftctrl	# bind capslock to ctrl
+#+end_src
