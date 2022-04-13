@@ -80,3 +80,42 @@ evdev:input:b0005v1A81p1319*	# ikbc S200
 evdev:atkbd:dmi:*		# laptop keyboard
  KEYBOARD_KEY_3a=leftctrl	# bind capslock to ctrl
 #+end_src
+
+* 开机自启动蓝牙（登录界面就开启）
+
+总结：基本原理是用 systemd 来设置开机自启
+
+1. 创建文件： =/usr/lib/systemd/system/bluetoothon.service=
+   #+begin_src sh
+     vim /usr/lib/systemd/system/bluetoothon.service
+   #+end_src
+2. 添加内容如下：
+   #+begin_src
+     [Unit]
+     Description=Bluetooth scan service
+     After=bluetooth.service
+
+     [Service]
+     Type=idle
+     ExecStart=bluetooth on
+     #WatchdogSec=10
+     #Restart=on-failure
+
+     [Install]
+     WantedBy=multi-user.target
+     #WantedBy=bluetooth.target
+     #Alias=dbus-org.bluez.service
+   #+end_src
+3. 保存文件后启动服务：
+   #+BEGIN_SRC sh
+     systemctl enable bluetoothon.service
+   #+END_SRC
+4. 简单测试，还需修改 =/etc/bluetooth/main.conf= 中的配置
+   *备注* ：目前测试是这个两个配置缺一不可，但还是不笃定这个配置的必要性
+   #+begin_src
+     [Policy]
+     AutoEnable=true
+   #+end_src
+
+参考链接：[[https://icode.best/i/64404945086048][【树莓派3B+】安装archlinux后，如何设置启动后自动开启蓝牙连接键盘-爱代码爱编程]]
+备注：参考内容有修改
