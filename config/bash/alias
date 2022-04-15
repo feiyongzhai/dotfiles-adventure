@@ -23,8 +23,8 @@ alias update='sudo apt upgrade && cd ~/.emacs.d && git pull'
 alias -- -='cd -'
 
 # Emacs related
-alias e='emacsclient -a "" -t'
-alias ec='emacsclient -a "" -c'
+alias e='emacsclient -t'
+alias ec='emacsclient -c'
 if [[ "$TERM" == "eterm-color" ]] || [[ "$TERM" == "dumb" ]] \
        || [[ "$INSIDE_EMACS" == "vterm" ]]; then
     # eterm-color is for emacs-term, dumb is for emacs-shell

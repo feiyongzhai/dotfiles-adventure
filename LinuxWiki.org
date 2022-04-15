@@ -119,3 +119,9 @@ evdev:atkbd:dmi:*		# laptop keyboard
 
 参考链接：[[https://icode.best/i/64404945086048][【树莓派3B+】安装archlinux后，如何设置启动后自动开启蓝牙连接键盘-爱代码爱编程]]
 备注：参考内容有修改
+
+* i18n m17n l10n
+命名规则：取首尾字母＋中间字符数的个数
+- i18n :: 国际化（internationalization）
+- m17n :: 多语言化（Multilingualization）
+- l10n :: 本地化（localization）
