@@ -1,5 +1,34 @@
 #+TITLE: linux wiki
 
+
+* git config core.pager
+在 eshell 运行一些 git 命令的时候，总是会遇到
+#+begin_example
+WARNING: terminal is not fully functional
+Press RETURN to continue 
+#+end_example
+网上搜索了一下，发现是 git 中 core.pager 的原因。如果想要避免这个显示，有两种方法
+
+1. 不要 pager
+#+begin_src shell
+  git config --global core.pager ''
+  git config --global pager.diff 'less -Fx' # 更明确的指定 pager 工具
+#+end_src
+2. 使用命令的时候显式指定
+#+begin_src shell
+  git --no-pager branch
+#+end_src
+
+这样就不会有烦人的输出了
+
+** 参考链接：
+1. [[https://medium.com/pragmatic-programmers/git-config-core-pager-807e17d64243][Git-Config: core.pager. How to Wrangle Git’s Terminal Output]]
+2. [[https://icyleaf.com/2013/10/about-pager-on-git/][Git 和 Pager 的那点事]]
+3. [[https://my.oschina.net/antsky/blog/3069471][在终端下 Git 命令的输出内容在新窗口打开？]]
+
+** 题外话
+这个问题让我意识到 pager 工具的存在，而且我还发现了一个看样子好厉害的 pager 工具 git-delta
+
 * systemd
 
 比较常用的命令
