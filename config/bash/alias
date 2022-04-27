@@ -60,4 +60,5 @@ alias gitd='git diff'
 alias gitl='git log --oneline -7'
 alias gri='git rebase -i'
 alias gca='git commit --amend'
+alias gcaa='git add --all && git commit --amend'
 
