@@ -29,12 +29,13 @@ if [[ "$TERM" == "eterm-color" ]] || [[ "$TERM" == "dumb" ]] \
        || [[ "$INSIDE_EMACS" == "vterm" ]]; then
     # eterm-color is for emacs-term, dumb is for emacs-shell
     export FZF_DEFAULT_OPTS="--height 40% --layout=reverse "
+    export EDITOR='emacsclient'
     alias e='emacsclient -n'
     # 回到之前调用 ansi-term 的 emacs buffer 中
     # alias back='emacsclient -n -e "(switch-to-buffer nil)"> /dev/null'
-    alias back='emacsclient -n -e "(eyebrowse-last-window-config)"> /dev/null'
+    # alias back='emacsclient -n -e "(eyebrowse-last-window-config)"> /dev/null'
     alias eshj='emacsclient -n -e "(fei-eshell-cd-here)"'
-    alias tig='emacsclient -n -e "(magit-status)"'
+    alias magit='emacsclient -n -e "(magit-status)"'
     alias a='emacsclient -n -e "(eshell/a)"'
     alias k='emacsclient -n -e "(eshell/k)"'
     alias ks='emacsclient -n -e "(eshell/ks)"'
