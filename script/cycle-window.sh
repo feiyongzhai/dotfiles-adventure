@@ -8,10 +8,9 @@ win_list=$(wmctrl -x -l | grep -i $win_class\\.$win_class | awk '{print $1}' )
 
 # get id of the focused window
 # active_win_id=$(xprop -root | grep '^_NET_ACTIVE_W' | awk -F'# 0x' '{print $2}' | awk -F', ' '{print$2$1}')
-active_win_id=$(xprop -root _NET_ACTIVE_WINDOW | awk -F'# 0x' '{print $2}' | awk -F', ' '{print$2$1}')
-if [ "$active_win_id" == "0" ]; then
-    active_win_id=""
-fi
+#BUG: when a window id is 0x00***(wmctrl -xl output), but xprop -root _NET_ACTIVE_WINDOW return ***(少一个0)
+#这就导致后面的操作不匹配，无法正确识别当前激活的窗口
+active_win_id=$(xprop -root _NET_ACTIVE_WINDOW | awk -F'# 0x' '{print $2}')
 
 # get next window to focus on, removing id active
 # 注意下面 sed 命令要用双引号
