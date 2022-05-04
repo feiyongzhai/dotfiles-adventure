@@ -62,3 +62,9 @@ alias gri='git rebase -i'
 alias ga='git commit --amend'
 alias gan='git add --all && git commit --amend --no-edit'
 alias gp='git push'
+
+# flutter 这个不是官方推荐的方法，但是我能跑起来，先这么用着，
+# 其实我的 flutter 还有 sdk 的报错，我没管，能用。哈哈
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+alias flutter=~/.local/opt/flutter/bin/flutter
