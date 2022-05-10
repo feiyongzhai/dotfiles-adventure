@@ -21,6 +21,7 @@ alias terminal='gnome-terminal'
 alias update='sudo apt upgrade && cd ~/.emacs.d && git pull'
 # @ref https://superuser.com/questions/515565/how-to-create-alias-for-minus-sign
 alias -- -='cd -'
+alias Cc="setxkbmap -option 'ctrl:nocaps'"
 
 # Emacs related
 alias e='emacsclient -t'
