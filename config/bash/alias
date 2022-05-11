@@ -1,5 +1,7 @@
 # -*- mode: sh -*-
 
+
+alias x='xdotool'
 alias p='python3'
 alias t='tmux'
 
@@ -12,7 +14,6 @@ alias n='nvim'
 alias v='vim'
 alias bar='trayer --transparent true --tint 0x00ff00 --align right --edge top'
 alias of='xdg-open'
-alias f='fortune'
 alias proxys='export all_proxy=socks5://127.0.0.1:1089'
 # 为什么大写的不管用？小写的就行？ I don not why, But it works.
 # alias proxys='export ALL_PROXY=socks5://127.0.0.1:1089'
@@ -20,7 +21,6 @@ alias proxyh='export all_proxy=http://127.0.0.1:8889'
 alias terminal='gnome-terminal'
 alias update='sudo apt upgrade && cd ~/.emacs.d && git pull'
 # @ref https://superuser.com/questions/515565/how-to-create-alias-for-minus-sign
-alias -- -='cd -'
 alias Cc="setxkbmap -option 'ctrl:nocaps'"
 
 # Emacs related
