@@ -1,0 +1,12 @@
+#!/bin/bash
+
+win_class=$1
+
+all_window=$(xdotool search --class --onlyvisible $win_class )
+
+activate_window=$(xdotool getactivewindow)
+echo $activate_window
+# echo $win_list | sed "s/.*$active_win_id//" | awk '{print $1}'
+target_window=$(echo $all_window | sed "s/$activate_window//" | awk '{print $1}')
+echo $target_window
+xdotool windowactivate $target_window
