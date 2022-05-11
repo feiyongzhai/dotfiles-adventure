@@ -1,0 +1,23 @@
+#!/bin/bash
+# 脚本功能：移动窗口到屏幕中心
+
+# 获得屏幕尺寸
+screensize=$(xrandr | grep '*' | awk '{print $1}')
+screenwidth=$(echo $screensize | awk -F'x' '{print $1}')
+screenheight=$(echo $screensize | awk -F'x' '{print $2}')
+#echo $screenwidth
+#echo $screenheight
+# 或者窗口尺寸
+windowsize=$(xdotool getactivewindow getwindowgeometry | grep 'Geometry' | awk -F': ' '{print $2}')
+windowwidth=$(echo $windowsize | awk -F'x' '{print $1}')
+windowheight=$(echo $windowsize | awk -F'x' '{print $2}')
+#echo $windowwidth
+#echo $windowheight
+# 移动到中心
+# bash syntax: string => number
+# number=$((string))
+targetx=$((($screenwidth-$windowwidth)/2))
+targety=$((($screenheight-$windowheight)/2))
+#echo $targetx
+#echo $targety
+xdotool getactivewindow windowmove $targetx $targety
