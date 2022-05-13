@@ -1,0 +1,4 @@
+# -*- mode: sh -*-
+
+export GOPATH=~/.local/opt/go
+export export PATH=$PATH:$(go env GOPATH)/bin
