@@ -5,9 +5,6 @@ test:
 	echo ${PWD}
 	echo ${HOME}
 
-emacs:
-	ln -sf ${PWD}/emacs.d ${HOME}/.emacs.d # use ``ln -r`` to create symbolic link by relative path
-
 tmux:
 	ln -sf ${PWD}/tmux/tmux.conf ${HOME}/.tmux.conf
 
