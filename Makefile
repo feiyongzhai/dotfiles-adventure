@@ -14,9 +14,6 @@ tmux:
 bash:
 	ln -sf ${PWD}/config/bash ${HOME}/.config/bash
 
-vim:
-	ln -sf ${PWD}/vim/.vim ${HOME}/.vim
-
 i3:
 	ln -sf ${PWD}/config/i3 ${HOME}/.config/i3
 
