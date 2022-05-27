@@ -4,7 +4,11 @@
 win_class=$1			# 'terminator' # $1
 
 # get list of all windows matching with the class above
-win_list=$(wmctrl -x -l | grep -i $win_class\\.$win_class | awk '{print $1}' )
+if [[ $win_class == "firefox" ]]; then
+	win_list=$(wmctrl -x -l | grep -i "Navigator"\\.$win_class | awk '{print $1}' )
+else
+	win_list=$(wmctrl -x -l | grep -i $win_class\\.$win_class | awk '{print $1}' )
+fi
 echo win_list $win_list
 
 # get id of the focused window
