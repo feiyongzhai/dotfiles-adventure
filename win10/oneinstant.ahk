@@ -32,6 +32,27 @@ ActivateAndOpen(t,p)
   }
 }
 
+global cnt := 0
+ActivateAndOpenEmacs()
+{
+    if Activate("ahk_class Emacs")==0
+    {
+	if (cnt = 0){
+	    Run *runas C:/Program Files/Emacs/emacs-28.2/bin/emacsclientw.exe -a "" -c -e "(progn (switch-to-buffer nil) (raise-frame))"
+	    WinActivate
+	    cnt :=cnt + 1
+	    ;msgbox % cnt
+	}
+	else
+	{
+	    run C:/Program Files/Emacs/emacs-28.2/bin/emacsclientw.exe -a "" -c -e "(progn (switch-to-buffer nil) (raise-frame))"
+	    WinActivate
+	}
+
+	return
+    }
+}
+
 CenterWindow(WinTitle)
 {
     WinGetPos,,, Width, Height, %WinTitle%
