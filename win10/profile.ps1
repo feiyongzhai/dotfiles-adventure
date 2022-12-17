@@ -9,4 +9,4 @@ Set-Alias of start -Scope Global
 
 # REF: https://www.cnblogs.com/sober-orange/p/powershell-shotkey-windows-terminal.html
 Set-PSReadLineOption -EditMode Emacs #会改变按键行为
-
+Set-PSReadLineKeyHandler -Chord Ctrl+i -Function TabCompleteNext
