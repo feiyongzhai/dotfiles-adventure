@@ -68,6 +68,7 @@ CenterWindow(WinTitle)
 ; #a::ActivateAndOpen("Microsoft Outlook","outlook.exe")
 
 #h::ActivateAndOpen("Cent Browser","C:\Users\22754\AppData\Local\CentBrowser\Application\chrome.exe")
+; #h::ActivateAndOpen("- Microsoft​ Edge", "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe")
 #[::ActivateAndOpen("ahk_class SDL_app","c:\scoop\apps\scrcpy\1.24\scrcpy-noconsole.vbs")
 ; #k::ActivateAndOpen("Windows PowerShell","powershell.exe")
 #k::ActivateAndOpen("ahk_class CASCADIA_HOSTING_WINDOW_CLASS","wt.exe")
