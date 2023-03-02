@@ -6,8 +6,9 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O 
 # autojump
 # . /usr/share/doc/fzf/examples/key-bindings.bash
 # . /usr/share/autojump/autojump.bash
-eval "$(fasd --init auto)"
-alias j='fasd_cd -d'
+#eval "$(fasd --init auto)"
+#alias j='fasd_cd -d'
+eval "$(zoxide init bash)"
 
 # prompt style
 if [ "$ZSH" = '' ]; then
