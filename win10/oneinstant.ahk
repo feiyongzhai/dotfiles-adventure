@@ -74,7 +74,7 @@ CenterWindow(WinTitle)
 #k::ActivateAndOpen("ahk_class CASCADIA_HOSTING_WINDOW_CLASS","wt.exe")
 ; #h::ActivateAndOpen("Google Chrome","C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
 ; #m::ActivateAndOpen("MATLAB R2021a","C:\Program Files\MATLAB\R2021a\bin\matlab.exe")
-; #k::ActivateAndOpen("Visual Studio Code","C:\Users\22754\AppData\Local\Programs\Microsoft VS Code\Code.exe")
+; #k::ActivateAndOpen("- Visual Studio Code","C:\Users\22754\AppData\Local\Programs\Microsoft VS Code\Code.exe")
 ; #k::Activate(" - Visual Studio Code")
 ; #c::Activate("UltraEdit")
 
@@ -89,3 +89,8 @@ WinGetActiveTitle, var_title
 CenterWindow(var_title)
 return
 
+
+; #IfWinActive - Visual Studio Code
+; #j::
+; Send, !+e			;要在 vscode 中有相应的配置
+; return
