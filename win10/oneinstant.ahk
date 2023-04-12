@@ -89,6 +89,8 @@ WinGetActiveTitle, var_title
 CenterWindow(var_title)
 return
 
+#IfWinActive ahk_class Emacs
+^Space:: ^\
 
 ; #IfWinActive - Visual Studio Code
 ; #j::
