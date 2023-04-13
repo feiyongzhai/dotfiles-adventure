@@ -91,6 +91,7 @@ return
 
 #IfWinActive ahk_class Emacs
 ^Space:: ^\
+^\::Send ^{Space}
 
 ; #IfWinActive - Visual Studio Code
 ; #j::
