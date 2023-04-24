@@ -11,6 +11,9 @@
 #
 # 进一步安装 kitty 进行测试：发现 kitty 下也无法切换，同时使用命令 fcitx-remote -t
 # 也无法切换。
+#
+# 经过我不懈的尝试，终于发现可以解决问题的方法了，虽然不知道原理
+# 方法就是给一定的延时就可以了，经过调试发现，延时也不能太短。
 
 CURRENT_WIN=$(xdotool getactivewindow)
 EMACS=$(xdotool search --classname --onlyvisible emacs)
@@ -19,5 +22,6 @@ if echo $EMACS|grep -q $CURRENT_WIN; then
     # xdotool key --delay 300 ctrl+backslash # 效果不好，会出现吞 ctrl 按键，发送失灵的情况
     xdotool getactivewindow key ctrl+backslash # 稳定，不吞 ctrl
 else
-    fcitx-remote -t
+    xdotool sleep 0.1 exec fcitx-remote -t
+    #sleep 0.2; fcitx-remote -t
 fi
